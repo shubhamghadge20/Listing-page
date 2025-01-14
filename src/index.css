@@ -1,0 +1,30 @@
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card-img {
+  transition: transform 0.3s ease;
+}
+
+.product-card-img:hover {
+  transform: scale(1.1);
+}
+
+.product-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-card-price {
+  font-size: 1.1rem;
+  color: #007bff;
+}
+
+.product-card-btn {
+  width: 100%;
+  margin-top: 10px;
+}
