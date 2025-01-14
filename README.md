@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# **Product Listing Application**  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based product listing application that allows users to view, search, filter, and paginate through a list of products fetched from an external API. It uses Bootstrap for styling and React Context for state management.  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Features**  
 
-### `npm start`
+- **Search Bar**: Allows users to search for products by name.  
+- **Filter Sidebar**: Users can filter products by category.  
+- **Pagination**: Displays a limited number of products per page with navigation controls.  
+- **Responsive Design**: Ensures a seamless user experience on all screen sizes.  
+- **API Integration**: Fetches product data from a public API.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **Technologies Used**  
 
-### `npm test`
+- **React**: Frontend library for building user interfaces.  
+- **React-Bootstrap**: For responsive and styled UI components.  
+- **React Icons**: For adding icons to the UI.  
+- **Axios**: For making API requests.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## **Setup and Installation**  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+```bash
+   git clone https://github.com/your-repo-url
+ ```
+```bash
+   cd product-listing-app
+``` 
+2. Install dependencies:  
+```bash
+npm install
+```  
+3. Start the development server:
+```bash
+npm start
+```
+4.Open your browser and navigate to http://localhost:3000 to view the app.  
+# **Usage**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **View Products**
+- Browse the grid of products displayed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **Search Products**
+- Enter a keyword in the search bar to filter products by name.
 
-### `npm run eject`
+## **Filter by Category**
+- Use the dropdown in the sidebar to select a specific category.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **Pagination**
+- Use the pagination controls at the bottom to navigate through pages of products.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# **Documentation**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **Code Structure**
 
-## Learn More
+### **`src/components`**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **`ProductCard.js`**: Renders individual product cards with details like image, name, price, and rating.
+- **`ProductGrid.js`**: Displays products in a grid layout with responsiveness.
+- **`FilterSidebar.js`**: Provides category-based filtering functionality.
+- **`SearchBar.js`**: Contains the search bar for filtering products by name.
+- **`Pagination.js`**: Handles pagination for navigating through products.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **`src/context`**
 
-### Code Splitting
+- **`ProductContext.js`**: Manages global state for products, search term, filters, and pagination using React Context API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **`src/services`**
 
-### Analyzing the Bundle Size
+- **`api.js`**: Contains the function to fetch products from the external API (`https://fakestoreapi.com/products`).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### **`src/App.js`**
 
-### Making a Progressive Web App
+- Main application file that integrates all components and provides the layout.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## **Fetching and Rendering Product Data**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### **Fetching Data**
+- The `fetchProducts` function in `api.js` uses Axios to retrieve data from the API.
+- Data is formatted to include:
+  - `id`
+  - `name`
+  - `price`
+  - `rating`
+  - `image`
+  - `category`
 
-### Deployment
+### **State Management**
+- The `ProductContext` manages the product data and state for:
+  - Filters
+  - Search
+  - Pagination
+- Provides methods to filter products based on search terms and categories.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **Rendering Products**
+- The `ProductGrid` component receives filtered and paginated data from the context.
+- Each product is passed to the `ProductCard` component, which displays the product details.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
