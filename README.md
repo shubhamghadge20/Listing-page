@@ -30,7 +30,7 @@ This project is a React-based product listing application that allows users to v
    git clone https://github.com/shubhamghadge20/Listing-page.git
  ```
 ```bash
-   cd product-listing-app
+   cd Listing-page
 ``` 
 2. Install dependencies:  
 ```bash
